@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Sense</string>
+    <string name="info_text">Sense is a chip into an Activity.You can achieve efficient reuse and build multiple activities, eliminating the trouble of plugging in AndroidManifests.xml one by one.</string>
+    <string name="start_a_sense">Start a Sense</string>
+    <string name="start_another_sense">Start another Sense</string>
+    <string name="info_text_2">You are now using Sense to display this interface.</string>
+    <string name="info_text_3">You are now into another Sense.</string>
+    <string name="back_to_the_mainsense">Back to the MainSense</string>
+    <string name="info_text_chinese">Sense 是一个 Activity 的实例片段，它可以代理 Activity 实现高效复用 Activity，你再也不需要去 AndroidManifests.xml 一个一个的注册实例了，相比 Fragment，它更轻量，简单，如果你只需要实现一个窗口实例而不想去注册一大堆 Activity，那 Sense 无疑是一个好的选择。</string>
+</resources>
