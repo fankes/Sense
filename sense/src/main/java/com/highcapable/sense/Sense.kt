@@ -118,7 +118,7 @@ open class Sense : SenseWrapper() {
     fun bindRootLayoutWith(viewId: Int) {
         rootView ?: error(ERROR_CONTAINER_NO_INIT)
         nSelf?.findViewById<View>(viewId)?.let {
-            if (it !is ViewGroup) error(ERROR_CONTAINER)
+            if (it !is ViewGroup) error(javaClass.simpleName + " InitFail:" + ERROR_CONTAINER)
             it.addView(
                 rootView,
                 ViewGroup.LayoutParams(
@@ -136,7 +136,7 @@ open class Sense : SenseWrapper() {
     fun bindRootLayoutWith(view: View) {
         rootView ?: error(ERROR_CONTAINER_NO_INIT)
         view.let {
-            if (it !is ViewGroup) error(ERROR_CONTAINER)
+            if (it !is ViewGroup) error(javaClass.simpleName + " InitFail:" + ERROR_CONTAINER)
             it.addView(
                 rootView,
                 ViewGroup.LayoutParams(
