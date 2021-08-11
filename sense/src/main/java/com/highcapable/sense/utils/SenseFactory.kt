@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-@file:Suppress("CAST_NEVER_SUCCEEDS")
+@file:Suppress("CAST_NEVER_SUCCEEDS", "unused")
 
 package com.highcapable.sense.utils
 
@@ -52,3 +52,19 @@ fun findSense(tag: String) = senseInstances[tag]
  * @param tag Your sense tag
  */
 fun removeSense(tag: String) = senseInstances.remove(tag)
+
+/**
+ * Check the [Sense] in your Application lifecycle is Repeating.
+ * @param instanceClass Your sense class full name
+ */
+fun isSenseRepeating(instanceClass: String): Boolean {
+    var isRepeat = false
+    if (senseInstances.isNotEmpty())
+        senseInstances.forEach { (t, _) ->
+            if (t.contains(instanceClass)) {
+                isRepeat = true
+                return@forEach
+            }
+        }
+    return isRepeat
+}
