@@ -34,7 +34,6 @@ open class Sense : SenseWrapper() {
 
     companion object {
 
-        private const val ERROR_INIT = "Sense is death or no initialization"
         private const val ERROR_ADDVIEW = "RootLayout must not be null or an container layout"
         private const val ERROR_CONTAINER =
             "Illegal View type! RootLayout must be an container layout"
@@ -51,11 +50,11 @@ open class Sense : SenseWrapper() {
 
     override val contentView get() = rootView
 
-    override val resources get() = nSelf?.resources ?: error(ERROR_INIT)
+    override val resources get() = nSelf?.resources
 
-    override val intent get() = nSelf?.intent ?: error(ERROR_INIT)
+    override val intent get() = nSelf?.intent
 
-    override val supportFragmentManager get() = nSelf?.supportFragmentManager ?: error(ERROR_INIT)
+    override val supportFragmentManager get() = nSelf?.supportFragmentManager
 
     override fun onCreateContext(activity: AppCompatActivity) {
         nSelf = activity
@@ -75,15 +74,13 @@ open class Sense : SenseWrapper() {
 
     override fun doOnDestroy() {}
 
-    override fun onBackPressed() {
-        finish()
-    }
+    override fun onBackPressed() = finish()
 
     override fun onMultiWindowModeChanged(isInMultiWindowMode: Boolean) {}
 
     override fun onSenseResult(requestCode: Int, resultCode: Int, data: Intent?) {}
 
-    override fun finish() = nSelf?.finish()!!
+    override fun finish() = nSelf?.finish()
 
     override fun addView(resId: Int) {
         rootView = LayoutInflater.from(nSelf).inflate(resId, null) as? ViewGroup

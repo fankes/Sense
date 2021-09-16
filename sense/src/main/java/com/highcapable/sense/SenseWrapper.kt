@@ -112,7 +112,7 @@ abstract class SenseWrapper {
     /**
      * When the [AppCompatActivity] onBackPressed event called
      */
-    abstract fun onBackPressed()
+    abstract fun onBackPressed(): Unit?
 
     /**
      * When the [AppCompatActivity] onMultiWindowModeChanged Lifecycle begins
@@ -127,5 +127,5 @@ abstract class SenseWrapper {
     /**
      * When the [AppCompatActivity] finish event called
      */
-    abstract fun finish()
+    abstract fun finish(): Unit?
 }
