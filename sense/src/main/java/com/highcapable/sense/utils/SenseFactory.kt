@@ -68,3 +68,22 @@ fun isSenseRepeating(instanceClass: String): Boolean {
         }
     return isRepeat
 }
+
+/**
+ * Removed [Sense] in your Application lifecycle when is Repeating.
+ * @param instanceClass Your sense class full name
+ */
+fun removeRepeatingSense(instanceClass: String) {
+    var senseInstance: Sense? = null
+    var senseTag: String? = null
+    if (senseInstances.isNotEmpty())
+        senseInstances.forEach { (t, e) ->
+            if (t.contains(instanceClass)) {
+                senseTag = t
+                senseInstance = e
+                return@forEach
+            }
+        }
+    senseInstance?.finish()
+    senseTag?.let { removeSense(it) }
+}
