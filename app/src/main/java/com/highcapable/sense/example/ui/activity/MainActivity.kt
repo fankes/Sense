@@ -12,7 +12,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        title = "MainActivity"
         findViewById<Button>(R.id.activity_start_button).setOnClickListener {
             /**
              * We need use this method to start a Sense

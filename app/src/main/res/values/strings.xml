@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Sense</string>
+    <string name="app_name">SenseDemo</string>
     <string name="info_text">Sense is a chip into an Activity.You can achieve efficient reuse and build multiple activities, eliminating the trouble of plugging in AndroidManifests.xml one by one.</string>
     <string name="start_a_sense">Start a Sense</string>
     <string name="start_another_sense">Start another Sense</string>
