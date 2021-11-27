@@ -21,8 +21,10 @@ package com.highcapable.sense
 import android.content.Intent
 import android.content.res.Configuration
 import android.os.Bundle
+import android.util.Log
 import android.view.ViewGroup
 import android.widget.FrameLayout
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.highcapable.sense.utils.createSense
 import com.highcapable.sense.utils.findSense
@@ -49,24 +51,36 @@ open class SenseActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        /**
-         * Create a [Sense] used className
-         * Make sure this class is exist otherwise you will got a [ClassNotFoundException]
-         */
-        instanceTag = createSense(
-            Class.forName(
-                intent?.getStringExtra("senseClassName") ?: error("Missing Sense initialization")
+        try {
+            /**
+             * Create a [Sense] used className
+             * Make sure this class is exist otherwise you will got a [ClassNotFoundException]
+             */
+            instanceTag = createSense(
+                Class.forName(
+                    intent?.getStringExtra("senseClassName")
+                        ?: error("Missing Sense initialization")
+                )
             )
-        )
-        senseInstance?.onCreateContext(this)
-        setContentView(FrameLayout(this).apply {
-            layoutParams = ViewGroup.LayoutParams(
-                ViewGroup.LayoutParams.MATCH_PARENT,
-                ViewGroup.LayoutParams.MATCH_PARENT
-            )
-            senseInstance?.doOnCreate(savedInstanceState)
-            senseInstance?.bindRootLayoutWith(this)
-        })
+            senseInstance?.onCreateContext(this)
+            setContentView(FrameLayout(this).apply {
+                layoutParams = ViewGroup.LayoutParams(
+                    ViewGroup.LayoutParams.MATCH_PARENT,
+                    ViewGroup.LayoutParams.MATCH_PARENT
+                )
+                senseInstance?.doOnCreate(savedInstanceState)
+                senseInstance?.bindRootLayoutWith(this)
+            })
+        } catch (e: Exception) {
+            Log.e("Sense", "start Sense failed", e)
+            Toast.makeText(
+                this,
+                "Try to start Sense failed! Please checking your className was right for this moment.\n" +
+                        "The error has been printed to the console.",
+                Toast.LENGTH_LONG
+            ).show()
+            finish()
+        }
     }
 
     override fun onStart() {

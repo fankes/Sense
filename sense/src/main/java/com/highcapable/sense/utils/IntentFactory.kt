@@ -26,6 +26,17 @@ import android.os.Bundle
 import com.highcapable.sense.Sense
 import com.highcapable.sense.SenseActivity
 
+/** This [containerActivity] will as a starter container. */
+var containerActivity: Class<*> = SenseActivity::class.java
+
+/**
+ * Change the [containerActivity] to your custom Activity
+ * @param cls Your Sense class like setCustomSenseContainer`<`YourClassName`>`()
+ */
+inline fun <reified cls : SenseActivity> setCustomSenseContainerActivity() {
+    containerActivity = cls::class.java
+}
+
 /**
  * Start a [Sense]
  * You can start a Sense from another [Sense]
@@ -63,7 +74,7 @@ fun Context.startSense(cls: Class<*>, bundle: Bundle = Bundle()) {
     cls.getConstructor().newInstance().let {
         if (it !is Sense) error("You must make sure the param \"cls\" is a Sense class")
         try {
-            startActivity(Intent(this, SenseActivity::class.java)
+            startActivity(Intent(this, containerActivity)
                 .apply {
                     putExtra("senseClassName", cls.name)
                     putExtras(bundle)
@@ -97,7 +108,7 @@ fun Context.startSenseForResult(cls: Class<*>, requestCode: Int, bundle: Bundle 
         if (it !is Sense) error("You must make sure the param \"cls\" is a Sense class")
         try {
             startActivityForResult(
-                Intent(this, SenseActivity::class.java)
+                Intent(this, containerActivity)
                     .apply {
                         putExtra("senseClassName", cls.name)
                         putExtras(bundle)
