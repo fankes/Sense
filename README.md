@@ -6,6 +6,7 @@ Sense is a efficient chip for Activity.<br/><br/>
 # What's this
 Sense 是一个运行在 Activity 中的高效实例片段，它省去了为了因为一个界面而去 AndroidManifests.xml 注册一个 Activity 的烦恼，如果你的项目并未使用一个 Activity+多个 Fragment 的组件方式又想快速实现界面构建，那 Sense 无疑是你一个好的选择。
 # Get started
+下载最新版本 AAR 依赖包导入到你的项目中 <a href='https://github.com/fankes/Sense/releases'>![Eclipse Marketplace](https://img.shields.io/badge/download-v1.1-green)</a><br/>
 #### Sense 的使用非常简单，你只需要按照下面的方法开始创建你的第一个类
 ```kotlin
 class YourSense : Sense() {
