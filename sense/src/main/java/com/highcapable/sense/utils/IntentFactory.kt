@@ -29,7 +29,7 @@ import com.highcapable.sense.SenseActivity
 /**
  * Start a [Sense]
  * You can start a Sense from another [Sense]
- * @param cls Your Sense class like startSense<youclassname>()
+ * @param cls Your Sense class like startSense`<`YourClassName`>`()
  * @param bundle The param that you need to send for another Sense
  */
 inline fun <reified cls : Sense> Sense.startSense(bundle: Bundle = Bundle()) =
@@ -37,16 +37,8 @@ inline fun <reified cls : Sense> Sense.startSense(bundle: Bundle = Bundle()) =
 
 /**
  * Start a [Sense]
- * You can start a Sense from another [Sense]
- * @param cls Your Sense class like youclassname::class.java
- * @param bundle The param that you need to send for another Sense
- */
-fun Sense.startSense(cls: Class<*>, bundle: Bundle = Bundle()) = activity?.startSense(cls, bundle)
-
-/**
- * Start a [Sense]
  * You can start a Sense from an [Activity]
- * @param cls Your Sense class like startSense<youclassname>()
+ * @param cls Your Sense class like startSense`<`YourClassName`>`()
  * @param bundle The param that you need to send for another Sense
  */
 inline fun <reified cls : Sense> Context.startSense(bundle: Bundle = Bundle()) =
@@ -54,8 +46,16 @@ inline fun <reified cls : Sense> Context.startSense(bundle: Bundle = Bundle()) =
 
 /**
  * Start a [Sense]
+ * You can start a Sense from another [Sense]
+ * @param cls Your Sense class like YourClassName::class.java
+ * @param bundle The param that you need to send for another Sense
+ */
+fun Sense.startSense(cls: Class<*>, bundle: Bundle = Bundle()) = activity?.startSense(cls, bundle)
+
+/**
+ * Start a [Sense]
  * You can start a Sense from an [Activity]
- * @param cls Your Sense class like youclassname::class.java
+ * @param cls Your Sense class like YourClassName::class.java
  * @param bundle The param that you need to send for another Sense
  */
 fun Context.startSense(cls: Class<*>, bundle: Bundle = Bundle()) {
@@ -77,7 +77,7 @@ fun Context.startSense(cls: Class<*>, bundle: Bundle = Bundle()) {
 /**
  * Start a [Sense]
  * You can start a Sense from another [Sense]
- * @param cls Your Sense class like youclassname::class.java
+ * @param cls Your Sense class like YourClassName::class.java
  * @param requestCode The Current Sense requestCode
  * @param bundle The param that you need to send for another Sense
  */
@@ -87,7 +87,7 @@ fun Sense.startSenseForResult(cls: Class<*>, requestCode: Int, bundle: Bundle = 
 /**
  * Start a [Sense]
  * You can start a Sense from an [Activity]
- * @param cls Your Sense class like youclassname::class.java
+ * @param cls Your Sense class like YourClassName::class.java
  * @param requestCode The Current Sense requestCode
  * @param bundle The param that you need to send for another Sense
  */
