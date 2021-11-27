@@ -7,8 +7,8 @@ Sense is a efficient chip for Activity.<br/><br/>
 
 # What's this
 
-Sense 是一个运行在 Activity 中的高效实例片段，它省去了为了因为一个界面而去 AndroidManifests.xml 注册一个 Activity 的烦恼，如果你的项目并未使用一个
-Activity+多个 Fragment 的组件方式又想快速实现界面构建，那 Sense 无疑是你一个好的选择。
+<strong>Sense</strong> 是一个依赖 <strong>Activity</strong> 运行的高效实例片段，它省去了为了因为一个界面而去 <strong>AndroidManifests.xml</strong> 注册一个 <strong>Activity</strong> 的烦恼，如果你的项目并未使用一个
+<strong>Activity+多个 Fragment</strong> 的组件方式又想快速实现界面构建，那 <strong>Sense</strong> 无疑是你一个好的选择。
 
 # Get started
 
@@ -62,12 +62,12 @@ startSense(YourSense::class.java, Bundle().apply { putString("simpleData", "some
 #### Java 使用方法
 
 ```java
-Bundle bundle = new Bundle();
-bundle.putString("simpleData", "something there");
-startSense(YourSense.class, bundle);
+Bundle bundle=new Bundle();
+bundle.putString("simpleData","something there");
+startSense(YourSense.class,bundle);
 ```
 
-实现起来是不是非常简单？再也不需要去写烦人的 AndroidManifests.xml 了，赶紧试试吧。
+实现起来是不是非常简单？再也不需要去写烦人的 <strong>AndroidManifests.xml</strong> 了，赶紧试试吧。
 
 # Custom
 
@@ -89,6 +89,13 @@ class YourCustomSenseActivity : SenseActivity() {
 
 ```kotlin
 setCustomSenseContainerActivity<YourCustomSenseActivity>()
+```
+
+#### 最后不要忘记在 AndroidManifests.xml 中注册你自定义的容器
+
+```xml
+
+<activity android:name="xxx.YourCustomSenseActivity" android:exported="false" />
 ```
 
 # Demo
