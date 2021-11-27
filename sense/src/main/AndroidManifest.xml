@@ -3,6 +3,9 @@
     package="com.highcapable.sense">
 
     <application>
-        <activity android:name="com.highcapable.sense.SenseActivity" />
+
+        <activity
+            android:name="com.highcapable.sense.SenseActivity"
+            android:exported="false" />
     </application>
 </manifest>

@@ -29,10 +29,28 @@ import com.highcapable.sense.SenseActivity
 /**
  * Start a [Sense]
  * You can start a Sense from another [Sense]
+ * @param cls Your Sense class like startSense<youclassname>()
+ * @param bundle The param that you need to send for another Sense
+ */
+inline fun <reified cls : Sense> Sense.startSense(bundle: Bundle = Bundle()) =
+    activity?.startSense(cls::class.java, bundle)
+
+/**
+ * Start a [Sense]
+ * You can start a Sense from another [Sense]
  * @param cls Your Sense class like youclassname::class.java
  * @param bundle The param that you need to send for another Sense
  */
 fun Sense.startSense(cls: Class<*>, bundle: Bundle = Bundle()) = activity?.startSense(cls, bundle)
+
+/**
+ * Start a [Sense]
+ * You can start a Sense from an [Activity]
+ * @param cls Your Sense class like startSense<youclassname>()
+ * @param bundle The param that you need to send for another Sense
+ */
+inline fun <reified cls : Sense> Context.startSense(bundle: Bundle = Bundle()) =
+    startSense(cls::class.java, bundle)
 
 /**
  * Start a [Sense]

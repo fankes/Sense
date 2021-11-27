@@ -37,15 +37,14 @@ class MainSense : Sense() {
              * 如果你需要传参，可以参考下面被注释的方法
              * 接收参数相当简单，因为 Sense 绑定 Activity，你只需要轻松调用 intent?.getXXX() 方法即可得到其中的参数。
              */
-            startSense(AnotherSense::class.java)
+            startSense<AnotherSense>()
             /**
              * This is the second example
              * Use Bundle param to send the data.
              */
-            //  startSense(
-            //      AnotherSense::class.java,
-            //      Bundle().apply { putString("simpleData", "something there") }
-            //  )
+            /// startSense<AnotherSense>(
+            ///     Bundle().apply { putString("simpleData", "something there") }
+            /// )
         }
     }
 

@@ -17,8 +17,12 @@ class MainActivity : AppCompatActivity() {
             /**
              * We need use this method to start a Sense
              * 我们只需要使用此方法启动一个 Sense
+             * ------
+             * 1.1 版本提供了一种新的方式启动 Sense
+             * 使用新的泛型方法 [startSense] 来启动目标 [MainSense]
              */
-            startSense(MainSense::class.java)
+            // startSense(MainSense::class.java)
+            startSense<MainSense>()
         }
     }
 }
