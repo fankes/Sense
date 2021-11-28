@@ -7,7 +7,8 @@ Sense is a efficient chip for Activity.<br/><br/>
 
 # What's this
 
-<strong>Sense</strong> 是一个依赖 <strong>Activity</strong> 运行的高效实例片段，它省去了为了因为一个界面而去 <strong>AndroidManifests.xml</strong> 注册一个 <strong>Activity</strong> 的烦恼，如果你的项目并未使用一个
+<strong>Sense</strong> 是一个依赖 <strong>Activity</strong> 运行的高效实例片段，它省去了为了因为一个界面而去 <strong>
+AndroidManifests.xml</strong> 注册一个 <strong>Activity</strong> 的烦恼，如果你的项目并未使用一个
 <strong>Activity+多个 Fragment</strong> 的组件方式又想快速实现界面构建，那 <strong>Sense</strong> 无疑是你一个好的选择。
 
 # Get started
@@ -62,9 +63,9 @@ startSense(YourSense::class.java, Bundle().apply { putString("simpleData", "some
 #### Java 使用方法
 
 ```java
-Bundle bundle=new Bundle();
-bundle.putString("simpleData","something there");
-startSense(YourSense.class,bundle);
+Bundle bundle = new Bundle();
+bundle.putString("simpleData", "something there");
+startSense(YourSense.class, bundle);
 ```
 
 实现起来是不是非常简单？再也不需要去写烦人的 <strong>AndroidManifests.xml</strong> 了，赶紧试试吧。
@@ -101,3 +102,23 @@ setCustomSenseContainerActivity<YourCustomSenseActivity>()
 # Demo
 
 项目提供了 Demo，可参考 app 中的代码来实现一个简单的 Sense 界面。
+
+# 许可证
+
+- [APACHE-2.0](https://www.apache.org/licenses/LICENSE-2.0)
+
+```
+Copyright (c) 2021. HighCapable
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+```
