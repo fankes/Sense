@@ -28,7 +28,7 @@ class YourSense : Sense() {
 }
 ```
 
-- 我们要启动它就可以这样在你的 Activity 中去调用它：<br/>
+- 我们要启动它就可以这样在你的 Activity 中去调用它<br/>
 
 - 第一种方法(推荐)
 
@@ -101,7 +101,7 @@ setCustomSenseContainerActivity<YourCustomSenseActivity>()
 
 # Demo
 
-- 项目提供了 Demo，可参考 app 中的代码来实现一个简单的 Sense 界面。
+项目提供了 Demo，可参考 app 中的代码来实现一个简单的 Sense 界面。
 
 # License
 
