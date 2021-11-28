@@ -13,10 +13,10 @@ AndroidManifests.xml</strong> 注册一个 <strong>Activity</strong> 的烦恼�
 
 # Get started
 
-下载最新版本 AAR
-依赖包导入到你的项目中 <a href='https://github.com/fankes/Sense/releases'>![Eclipse Marketplace](https://img.shields.io/badge/download-v1.1-green)</a><br/>
+- 下载最新版本 AAR
+- 依赖包导入到你的项目中 <a href='https://github.com/fankes/Sense/releases'>![Eclipse Marketplace](https://img.shields.io/badge/download-v1.1-green)</a><br/>
 
-#### Sense 的使用非常简单，你只需要按照下面的方法开始创建你的第一个类
+- Sense 的使用非常简单，你只需要按照下面的方法开始创建你的第一个类
 
 ```kotlin
 class YourSense : Sense() {
@@ -28,39 +28,39 @@ class YourSense : Sense() {
 }
 ```
 
-我们要启动它就可以这样在你的 Activity 中去调用它：<br/>
+- 我们要启动它就可以这样在你的 Activity 中去调用它：<br/>
 
-#### 第一种方法(推荐)
+- 第一种方法(推荐)
 
 ```kotlin
 startSense<YourSense>()
 ```
 
-#### 第二种方法
+- 第二种方法
 
 ```kotlin
 startSense(YourSense::class.java)
 ```
 
-#### Java 使用方法
+- Java 使用方法
 
 ```java
 startSense(YourSense.class);
 ```
 
-#### 如果需要传值到另一个 Sense，我们只需要再加一个参数
+- 如果需要传值到另一个 Sense，我们只需要再加一个参数
 
 ```kotlin
 startSense<YourSense>(Bundle().apply { putString("simpleData", "something there") })
 ```
 
-#### 当然了，你也可以使用第二种方法
+- 当然了，你也可以使用第二种方法
 
 ```kotlin
 startSense(YourSense::class.java, Bundle().apply { putString("simpleData", "something there") })
 ```
 
-#### Java 使用方法
+- Java 使用方法
 
 ```java
 Bundle bundle = new Bundle();
@@ -74,7 +74,7 @@ startSense(YourSense.class, bundle);
 
 ### 自定义 Sense 容器
 
-#### 你可以通过继承 SenseActivity 来自定义容器
+- 你可以通过继承 SenseActivity 来自定义容器
 
 ```kotlin
 class YourCustomSenseActivity : SenseActivity() {
@@ -86,13 +86,13 @@ class YourCustomSenseActivity : SenseActivity() {
 }
 ```
 
-#### 然后通过下面的方法设置你的自定义容器
+- 然后通过下面的方法设置你的自定义容器
 
 ```kotlin
 setCustomSenseContainerActivity<YourCustomSenseActivity>()
 ```
 
-#### 最后不要忘记在 AndroidManifests.xml 中注册你自定义的容器
+- 最后不要忘记在 AndroidManifests.xml 中注册你自定义的容器
 
 ```xml
 
@@ -101,7 +101,7 @@ setCustomSenseContainerActivity<YourCustomSenseActivity>()
 
 # Demo
 
-项目提供了 Demo，可参考 app 中的代码来实现一个简单的 Sense 界面。
+- 项目提供了 Demo，可参考 app 中的代码来实现一个简单的 Sense 界面。
 
 # License
 
