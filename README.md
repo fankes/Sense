@@ -103,7 +103,7 @@ setCustomSenseContainerActivity<YourCustomSenseActivity>()
 
 项目提供了 Demo，可参考 app 中的代码来实现一个简单的 Sense 界面。
 
-# 许可证
+# License
 
 - [APACHE-2.0](https://www.apache.org/licenses/LICENSE-2.0)
 
