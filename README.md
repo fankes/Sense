@@ -2,19 +2,21 @@
 
 ![Eclipse Marketplace](https://img.shields.io/badge/license-Apache2.0-blue)
 ![Eclipse Marketplace](https://img.shields.io/badge/version-v1.1-green)<br/><br/>
-Sense is a efficient chip for Activity.<br/><br/>
+Sense is a efficient chip for Activity.
+
 为你的项目集成一个高效可复用的 Activity 实例片段。
 
-# What's this
+## What's this
 
 <strong>Sense</strong> 是一个依赖 <strong>Activity</strong> 运行的高效实例片段，它省去了为了因为一个界面而去 <strong>
 AndroidManifests.xml</strong> 注册一个 <strong>Activity</strong> 的烦恼，如果你的项目并未使用一个
 <strong>Activity+多个 Fragment</strong> 的组件方式又想快速实现界面构建，那 <strong>Sense</strong> 无疑是你一个好的选择。
 
-# Get started
+## Get started
 
 - 下载最新版本 AAR
-- 依赖包导入到你的项目中 <a href='https://github.com/fankes/Sense/releases'>![Eclipse Marketplace](https://img.shields.io/badge/download-v1.1-green)</a><br/>
+
+- 依赖包导入到你的项目中 <a href='https://github.com/fankes/Sense/releases'>![Eclipse Marketplace](https://img.shields.io/badge/download-v1.1-green)</a>
 
 - Sense 的使用非常简单，你只需要按照下面的方法开始创建你的第一个类
 
@@ -63,14 +65,14 @@ startSense(YourSense::class.java, Bundle().apply { putString("simpleData", "some
 - Java 使用方法
 
 ```java
-Bundle bundle = new Bundle();
-bundle.putString("simpleData", "something there");
-startSense(YourSense.class, bundle);
+Bundle bundle=new Bundle();
+        bundle.putString("simpleData","something there");
+        startSense(YourSense.class,bundle);
 ```
 
 实现起来是不是非常简单？再也不需要去写烦人的 <strong>AndroidManifests.xml</strong> 了，赶紧试试吧。
 
-# Custom
+## Custom
 
 ### 自定义 Sense 容器
 
@@ -99,11 +101,11 @@ setCustomSenseContainerActivity<YourCustomSenseActivity>()
 <activity android:name="xxx.YourCustomSenseActivity" android:exported="false" />
 ```
 
-# Demo
+## Demo
 
 项目提供了 Demo，可参考 app 中的代码来实现一个简单的 Sense 界面。
 
-# License
+## License
 
 - [APACHE-2.0](https://www.apache.org/licenses/LICENSE-2.0)
 
